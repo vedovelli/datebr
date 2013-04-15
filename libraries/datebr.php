@@ -2,17 +2,18 @@
 
 /**
  * Bundle conversor de data no formato pt_BR para o padrão usado no Mysql
- * 
+ *
  * @package     datebr
  * @author      Osvaldo Gusmão <osvaldogusmao@yahoo.com.br>
- * @basedon     
+ * @basedon
  */
 
 class DateBR{
 
 	protected static $formatos = array(
-		'datetime' => 'd/m/Y - H:i:s',
-		'date'     => 'd/m/Y',
+		'datetime' 	=> 'd/m/Y - H:i:s',
+		'date'     	=> 'd/m/Y',
+		'usa'     	=> 'm/d/Y',
 	);
 
 	public static function toMysql($value){
@@ -23,7 +24,7 @@ class DateBR{
 
 		return $dateFormat;
 	}
-	
+
 	public static function toView($value, $formato){
 
 		if(in_array($formato, array_keys(DateBR::$formatos))){
